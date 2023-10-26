@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/homeFragment"
+    android:tag="homeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/pageHome"
+                android:textSize="36dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteAllButton"
+                android:layout_width="155dp"
+                android:layout_height="41dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="52dp"
+                android:background="@drawable/rounded_edittext"
+                android:fontFamily="@font/montserrat"
+                android:text="Delete All"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/title"/>
+<!--            <TextView-->
+<!--                android:id="@+id/name"-->
+<!--                android:layout_width="162dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="@drawable/rounded_edittext"-->
+<!--                android:backgroundTint="@color/gray"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:hint="@string/hint1"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:textSize="16dp"-->
+<!--                android:paddingLeft="16dp"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/title"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/title" />-->
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/moreButton"-->
+<!--                android:layout_width="76dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:background="@drawable/rounded_edittext"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/deleteAllButton"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/deleteAllButton"-->
+<!--                />-->
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/deleteButton"-->
+<!--                android:layout_width="76dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:background="@drawable/rounded_edittext"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/deleteAllButton"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/deleteAllButton"-->
+<!--                />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</FrameLayout>

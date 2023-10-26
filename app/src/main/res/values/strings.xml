@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Coursework</string>
+    <!-- For AddFragment -->
+    <string name="addFragment">Add</string>
+    <string name="name1">Add new hike</string>
+    <string name="name2">Name of the hike<font color='#FF0000'>*</font></string>
+    <string name="name3">Location<font color='#FF0000'>*</font></string>
+    <string name="name4">Date of the hike<font color='#FF0000'>*</font></string>
+    <string name="name5">Parking available<font color='#FF0000'>*</font></string>
+    <string name="name6">Length of the hike<font color='#FF0000'>*</font></string>
+    <string name="name7">Difficulty level<font color='#FF0000'>*</font></string>
+    <string name="name8">Description</string>
+    <string name="hint1">Son Dong</string>
+    <string name="hint2">Quang Binh</string>
+    <string name="hint3">20/11/2023</string>
+    <string name="hint4">100</string>
+    <string name="hint5">HIGH</string>
+    <string name="hint6">Description about the hike ...</string>
+    <string name="buttonAdd">Add</string>
+
+    <!-- For EditFragment -->
+    <string name="editName1">Edit Hike</string>
+    <string name="buttonUpdate">Update</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="homeFragment">Home</string>
+    <string name="pageHome">Home</string>
+    <string name="searchFragment">Search</string>
+    <!-- For ObservationFragment -->
+    <string name="observationTitle">Observations</string>
+    <string name="observationAddTitle">Add Observation</string>
+    <string name="observation">Observation<font color='#FF0000'>*</font></string>
+    <string name="time">Time of observation<font color='#FF0000'>*</font></string>
+    <string name="comment">Comment<font color='#FF0000'>*</font></string>
+</resources>

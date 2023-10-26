@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.observation.AddObservationFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBackspace"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="48dp"
+                app:icon="@drawable/baseline_backspace_24"
+                app:iconGravity="textStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/observationAddTitle"
+                android:textSize="36dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/observation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/observation"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@id/buttonBackspace"
+                app:layout_constraintTop_toBottomOf="@id/buttonBackspace" />
+
+            <EditText
+                android:id="@+id/observationText"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_edittext"
+                android:backgroundTint="@color/gray"
+                android:fontFamily="@font/montserrat_light_italic"
+                android:hint="@string/hint1"
+                android:textSize="12dp"
+                android:inputType="textCapWords"
+                android:paddingLeft="16dp"
+                app:layout_constraintStart_toStartOf="@+id/observation"
+                app:layout_constraintTop_toBottomOf="@+id/observation" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/time"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/observation"
+                app:layout_constraintTop_toBottomOf="@+id/observationText" />
+
+            <EditText
+                android:id="@+id/timeText"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/hint2"
+                android:fontFamily="@font/montserrat_light_italic"
+                android:textSize="12dp"
+                android:inputType="textCapWords"
+                android:paddingLeft="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:backgroundTint="@color/gray"
+                app:layout_constraintStart_toStartOf="@+id/time"
+                app:layout_constraintTop_toBottomOf="@+id/time" />
+
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/comment"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@id/observation"
+                app:layout_constraintTop_toBottomOf="@id/timeText" />
+            <EditText
+                android:id="@+id/commentText"
+                android:layout_width="match_parent"
+                android:layout_height="119dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/hint6"
+                android:fontFamily="@font/montserrat_light_italic"
+                android:textSize="12dp"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="start"
+                android:inputType="textMultiLine"
+                android:backgroundTint="@color/gray"
+                android:background="@drawable/rounded_edittext"
+                app:layout_constraintStart_toStartOf="@id/comment"
+                app:layout_constraintTop_toBottomOf="@id/comment" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAdd"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/rounded_edittext"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/buttonAdd"
+                android:gravity="center_horizontal|center_vertical"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/commentText"
+                tools:layout_editor_absoluteX="20dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+</FrameLayout>
