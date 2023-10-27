@@ -1,18 +1,22 @@
 package com.example.coursework.fragments.hike;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.room.Room;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.coursework.R;
@@ -41,7 +45,8 @@ public class AddFragment extends Fragment implements IAffectingDBFragment {
     private AppDatabase appDatabase;
     private HikeInputForm hikeInputForm;
 
-    EditText nameText, locationText, dothText, lothText, dlText, descriptionText;
+    EditText nameText, locationText, lothText, dlText, descriptionText;
+    TextView dothText;
     RadioGroup radioGroup;
     String radioButtonData;
     RadioButton yesRadioButton, noRadioButton;
@@ -88,6 +93,9 @@ public class AddFragment extends Fragment implements IAffectingDBFragment {
         nameText = rootView.findViewById(R.id.nameText);
         locationText = rootView.findViewById(R.id.locationText);
         dothText = rootView.findViewById(R.id.dothText);
+        dothText.setOnClickListener(view -> {
+            openDatePickerDialog();
+        });
         yesRadioButton = rootView.findViewById(R.id.yes);
         noRadioButton = rootView.findViewById(R.id.no);
         radioGroup = rootView.findViewById(R.id.choice);
@@ -176,5 +184,15 @@ public class AddFragment extends Fragment implements IAffectingDBFragment {
                 Toast.LENGTH_LONG
         ).show();
         ((MainActivity) getActivity()).displayFragment(null);
+    }
+
+    private void openDatePickerDialog() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(requireContext(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                dothText.setText(String.valueOf(day) + "/" + String.valueOf(month) + "/" + String.valueOf(year));
+            }
+        }, 2023, 0, 0);
+        datePickerDialog.show();
     }
 }

@@ -114,6 +114,7 @@ public class HomeFragment extends Fragment  implements HikeAdapter.OnDeleteClick
     public void onMoreCLick(HikeWithObservations hike) {
         Bundle bundle = new Bundle();
         bundle.putLong("hikeId", hike.hike.getHikeId());
+        bundle.putString("date", hike.hike.getDate());
         Fragment observationFragment = new ObservationsFragment();
         observationFragment.setArguments(bundle);
         ((MainActivity) getActivity()).displayFragment(observationFragment);

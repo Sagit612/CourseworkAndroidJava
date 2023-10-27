@@ -43,6 +43,7 @@
                 android:layout_marginTop="26dp"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/observation"
+                android:clickable="true"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="@id/buttonBackspace"
                 app:layout_constraintTop_toBottomOf="@id/buttonBackspace" />
@@ -76,7 +77,7 @@
                 app:layout_constraintStart_toStartOf="@+id/observation"
                 app:layout_constraintTop_toBottomOf="@+id/observationText" />
 
-            <EditText
+            <TextView
                 android:id="@+id/timeText"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
@@ -88,6 +89,7 @@
                 android:textSize="12dp"
                 android:inputType="textCapWords"
                 android:paddingLeft="16dp"
+                android:gravity="center_vertical"
                 android:background="@drawable/rounded_edittext"
                 android:backgroundTint="@color/gray"
                 app:layout_constraintStart_toStartOf="@+id/time"

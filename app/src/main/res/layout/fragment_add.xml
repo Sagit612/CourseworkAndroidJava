@@ -91,18 +91,20 @@
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="@id/name"
                 app:layout_constraintTop_toBottomOf="@id/locationText" />
-            <EditText
+            <TextView
                 android:id="@+id/dothText"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:clickable="true"
                 android:hint="@string/hint3"
                 android:fontFamily="@font/montserrat_light_italic"
                 android:textSize="12dp"
                 android:inputType="date"
                 android:paddingLeft="16dp"
+                android:gravity="center_vertical"
                 android:backgroundTint="@color/gray"
                 android:background="@drawable/rounded_edittext"
                 app:layout_constraintTop_toBottomOf="@id/dateOfTheHike"

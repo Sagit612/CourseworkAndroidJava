@@ -1,5 +1,7 @@
 package com.example.coursework.fragments.observation;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -9,7 +11,10 @@ import androidx.room.Room;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.coursework.R;
@@ -35,11 +40,13 @@ public class AddObservationFragment extends Fragment implements IAffectingDBFrag
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String date;
 
     private AppDatabase appDatabase;
     private ObservationInputForm observationForm;
 
-    EditText observationText, timeText, commentText;
+    EditText observationText, commentText;
+    TextView timeText;
     MaterialButton addButton, backspaceButton;
 
     public AddObservationFragment() {
@@ -84,6 +91,10 @@ public class AddObservationFragment extends Fragment implements IAffectingDBFrag
         long hikeId = getArguments().getLong("hikeId");
         observationText = rootView.findViewById(R.id.observationText);
         timeText = rootView.findViewById(R.id.timeText);
+        date = this.getArguments().getString("date");
+        timeText.setOnClickListener(view -> {
+            openTimePickerDialog();
+        });
         commentText = rootView.findViewById(R.id.commentText);
         addButton = rootView.findViewById(R.id.buttonAdd);
         backspaceButton = rootView.findViewById(R.id.buttonBackspace);
@@ -150,5 +161,15 @@ public class AddObservationFragment extends Fragment implements IAffectingDBFrag
         bundle.putLong("hikeId", getArguments().getLong("hikeId"));
         observationFragment.setArguments(bundle);
         ((MainActivity) getActivity()).displayFragment(observationFragment);
+    }
+
+    private void openTimePickerDialog() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(requireContext(), new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hours, int minutes) {
+                timeText.setText(String.valueOf(hours) + ":" + String.valueOf(minutes) + " - " + date);
+            }
+        }, 0, 0, true);
+        timePickerDialog.show();
     }
 }

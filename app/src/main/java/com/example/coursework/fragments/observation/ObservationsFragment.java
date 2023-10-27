@@ -100,6 +100,7 @@ public class ObservationsFragment extends Fragment implements ObservationAdapter
         addObservationButton.setOnClickListener(view ->  {
             Fragment addObservationFragment = new AddObservationFragment();
             Bundle bundle = new Bundle();
+            bundle.putString("date", getArguments().getString("date"));
             bundle.putLong("hikeId", hikeId);
             addObservationFragment.setArguments(bundle);
             ((MainActivity) getActivity()).displayFragment(addObservationFragment);
