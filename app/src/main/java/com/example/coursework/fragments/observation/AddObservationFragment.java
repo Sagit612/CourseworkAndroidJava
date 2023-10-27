@@ -40,7 +40,7 @@ public class AddObservationFragment extends Fragment implements IAffectingDBFrag
     private ObservationInputForm observationForm;
 
     EditText observationText, timeText, commentText;
-    MaterialButton addButton;
+    MaterialButton addButton, backspaceButton;
 
     public AddObservationFragment() {
         // Required empty public constructor
@@ -86,6 +86,14 @@ public class AddObservationFragment extends Fragment implements IAffectingDBFrag
         timeText = rootView.findViewById(R.id.timeText);
         commentText = rootView.findViewById(R.id.commentText);
         addButton = rootView.findViewById(R.id.buttonAdd);
+        backspaceButton = rootView.findViewById(R.id.buttonBackspace);
+        backspaceButton.setOnClickListener(view -> {
+            Fragment observationFragment = new ObservationsFragment();
+            Bundle bundle = new Bundle();
+            bundle.putLong("hikeId", getArguments().getLong("hikeId"));
+            observationFragment.setArguments(bundle);
+            ((MainActivity) getActivity()).displayFragment(observationFragment);
+        });
         addButton.setOnClickListener(view -> {
             observationForm = new ObservationInputForm(
                     hikeId,

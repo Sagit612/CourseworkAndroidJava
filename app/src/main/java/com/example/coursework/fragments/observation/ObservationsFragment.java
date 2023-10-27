@@ -45,7 +45,7 @@ public class ObservationsFragment extends Fragment implements ObservationAdapter
     private ObservationAdapter observationAdapter;
     RecyclerView recyclerView;
 
-    MaterialButton addObservationButton;
+    MaterialButton addObservationButton, backspaceButton;
 
     public ObservationsFragment() {
         // Required empty public constructor
@@ -86,6 +86,7 @@ public class ObservationsFragment extends Fragment implements ObservationAdapter
         appDatabase = Room.databaseBuilder(getContext(), AppDatabase.class, "courework")
                 .allowMainThreadQueries()
                 .build();
+        backspaceButton = rootView.findViewById(R.id.buttonBackspace);
         addObservationButton = rootView.findViewById(R.id.addObservationButton);
         recyclerView = rootView.findViewById(R.id.recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -93,6 +94,9 @@ public class ObservationsFragment extends Fragment implements ObservationAdapter
         List<Observation> observations = appDatabase.hikeDao().getObservationsByHikeId(hikeId);
         Log.d("List",observations.toString());
         observationAdapter = new ObservationAdapter(observations, this::onDeleteClick, this::onEditCLick);
+        backspaceButton.setOnClickListener(view -> {
+            ((MainActivity) getActivity()).displayFragment(null);
+        });
         addObservationButton.setOnClickListener(view ->  {
             Fragment addObservationFragment = new AddObservationFragment();
             Bundle bundle = new Bundle();
